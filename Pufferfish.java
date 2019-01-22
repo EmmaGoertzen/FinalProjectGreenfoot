@@ -15,20 +15,31 @@ public class Pufferfish extends Actor
     public void act() 
     {      
         moveDown();
-        removeBotPufferfish();
-        getImage().scale(200, 200);
+        removePufferfish();
     }  
     
+    public Pufferfish()
+    {
+        GreenfootImage image = getImage();
+        image.scale(70, 70);
+        setImage(image);
+    }
     public void moveDown()
     {   
          setLocation( getX(), getY() + 1);
     } 
 
-    public void removeBotPufferfish()
+    public void removePufferfish()
     {
         if(getY() >= getWorld().getHeight()-1)
         {
             getWorld().removeObject(this);
+        }
+        else if(isTouching(Mermaid.class))
+        {
+            SeaWorld world = (SeaWorld) getWorld();
+            getWorld().removeObject(this);
+            world.addScore(-50);
         }
     }
     

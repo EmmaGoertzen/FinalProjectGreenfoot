@@ -7,5 +7,5 @@ comment1.text=\r\n\ Act\ -\ do\ whatever\ the\ PurpleShell\ wants\ to\ do.\ This
 comment2.params=
 comment2.target=void\ moveDown()
 comment3.params=
-comment3.target=void\ removeBotShells()
+comment3.target=void\ removeShells()
 numComments=4

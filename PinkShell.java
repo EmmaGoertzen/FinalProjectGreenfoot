@@ -22,8 +22,8 @@ public class PinkShell extends Actor
             newObject = false;
         }
         moveDown();
-        removeBotShells();
-        getImage().scale(70, 70);
+        removeShells();
+        getImage().scale(50, 50);
     }  
     
     public void moveDown()
@@ -47,11 +47,17 @@ public class PinkShell extends Actor
          }
     } 
 
-    public void removeBotShells()
+    public void removeShells()
     {
         if(getY() >= getWorld().getHeight()-1)
         {
             getWorld().removeObject(this);
+        }
+        else if(isTouching(Mermaid.class))
+        {
+            SeaWorld world = (SeaWorld) getWorld();
+            getWorld().removeObject(this);
+            world.addScore(20);
         }
     } 
         public PinkShell()

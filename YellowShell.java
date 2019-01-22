@@ -15,7 +15,7 @@ public class YellowShell extends Actor
     public void act() 
     {      
         moveDown();
-        removeBotShells();
+        removeShells();
     }  
     
     public void moveDown()
@@ -23,11 +23,17 @@ public class YellowShell extends Actor
          setLocation( getX(), getY() + 3);
     } 
 
-    public void removeBotShells()
+    public void removeShells()
     {
         if(getY() >= getWorld().getHeight()-1)
         {
             getWorld().removeObject(this);
+        }
+        else if(isTouching(Mermaid.class))
+        {
+            SeaWorld world = (SeaWorld) getWorld();
+            getWorld().removeObject(this);
+            world.addScore(30);
         }
     }
 }

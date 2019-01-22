@@ -8,6 +8,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Mermaid extends Actor
 {
+    int points;
     /**
      * Act - do whatever the Mermaid wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
@@ -18,12 +19,20 @@ public class Mermaid extends Actor
     } 
     private void move()
     {
-                 if(Greenfoot.isKeyDown("d") == true){
+                 if(Greenfoot.isKeyDown("d")){
             move(2);
         }
         
-        if(Greenfoot.isKeyDown("a") == true){
+        if(Greenfoot.isKeyDown("a")){
             move(-2);
+        }
+    }
+    private void chechForShells()
+    {
+        if(isTouching(PurpleShell.class))
+        {
+            removeTouching(PurpleShell.class);
+            points = points + 10;
         }
     }
 }

@@ -8,6 +8,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class PurpleShell extends Actor
 {
+    int points;
     /**
      * Act - do whatever the PurpleShell wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
@@ -15,7 +16,7 @@ public class PurpleShell extends Actor
     public void act() 
     {      
         moveDown();
-        removeBotShells();
+        removeShells();
     }  
     
     public void moveDown()
@@ -23,11 +24,18 @@ public class PurpleShell extends Actor
          setLocation( getX(), getY() + 2);
     } 
 
-    public void removeBotShells()
+    public void removeShells()
     {
         if(getY() >= getWorld().getHeight()-1)
         {
             getWorld().removeObject(this);
         }
+        else if(isTouching(Mermaid.class))
+        {
+            SeaWorld world = (SeaWorld) getWorld();
+            getWorld().removeObject(this);
+            world.addScore(10);
+        }
     }
+    
 }
