@@ -25,7 +25,12 @@ public class PinkShell extends Actor
         removeShells();
         getImage().scale(50, 50);
     }  
-    
+    /**
+     * moves the pink shell down while also randomly moving side to side 
+     * also adds points
+     * @parm none
+     * @return none
+     */
     public void moveDown()
     {   
          setLocation( getX(), getY() + 1);
@@ -46,7 +51,12 @@ public class PinkShell extends Actor
              setLocation( getX() - 1, getY());
          }
     } 
-
+    /**
+     * removes the shell when it hits the bottom of the screen
+     * 
+     * @parm none
+     * @return none
+     */
     public void removeShells()
     {
         if(getY() >= getWorld().getHeight()-1)
@@ -60,7 +70,14 @@ public class PinkShell extends Actor
             world.addScore(20);
         }
     } 
-        public PinkShell()
+    /**
+     * constructor for pink shell
+     * mostly doing stuff with images and sizing
+     * 
+     * @parm none
+     * @return none
+     */
+    public PinkShell()
     {
         GreenfootImage image = getImage();
         image.scale( 100, 100);

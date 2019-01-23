@@ -17,13 +17,26 @@ public class Pufferfish extends Actor
         moveDown();
         removePufferfish();
     }  
-    
+    /**
+     * constroctor for pufferfish
+     * doing stiff with images 
+     * 
+     * @parm none
+     * @return none
+     */
     public Pufferfish()
     {
         GreenfootImage image = getImage();
         image.scale(70, 70);
         setImage(image);
     }
+    /**
+     * moves the pufferfish down the screen once its been randomly placed 
+     * in the world
+     * 
+     * @param none
+     * @return none
+     */
     public void moveDown()
     {   
          setLocation( getX(), getY() + 1);

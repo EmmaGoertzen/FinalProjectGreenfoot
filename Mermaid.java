@@ -17,22 +17,20 @@ public class Mermaid extends Actor
     {
         move();
     } 
+    /**
+     * moves the mermaid when the a or d keys are pressed 
+     * 
+     * @parm none
+     * @return none
+     */
     private void move()
     {
-                 if(Greenfoot.isKeyDown("d")){
+        if(Greenfoot.isKeyDown("d")){
             move(2);
         }
         
         if(Greenfoot.isKeyDown("a")){
             move(-2);
-        }
-    }
-    private void chechForShells()
-    {
-        if(isTouching(PurpleShell.class))
-        {
-            removeTouching(PurpleShell.class);
-            points = points + 10;
         }
     }
 }

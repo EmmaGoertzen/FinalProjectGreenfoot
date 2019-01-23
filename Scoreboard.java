@@ -10,7 +10,12 @@ public class Scoreboard extends Actor
 {
     int points;
     private Font myFont = new Font("Pixle", true, false, 24);
-
+    /**
+     * constructor for scoreboard 
+     * 
+     * @param none
+     * @return none
+     */
     public Scoreboard()
     {
         points = 0;
@@ -19,7 +24,12 @@ public class Scoreboard extends Actor
         img.drawString("Score: " + points, 5,25);
         setImage(img);
     }
-
+    /**
+     * counts the score and adds to it
+     * 
+     * @param none
+     * @return none
+     */
     public void addToScore(int pointsAdded) 
     {
         points += pointsAdded;

@@ -17,12 +17,23 @@ public class YellowShell extends Actor
         moveDown();
         removeShells();
     }  
-    
+    /**
+     * moves the shell down the screen once in the world
+     * 
+     * @param none
+     * @return none
+     */
     public void moveDown()
     {   
          setLocation( getX(), getY() + 3);
     } 
-
+    /**
+     * removes the shell once it hits the bottom of the screen
+     * also adds points  
+     * 
+     * @param none
+     * @return none
+     */
     public void removeShells()
     {
         if(getY() >= getWorld().getHeight()-1)

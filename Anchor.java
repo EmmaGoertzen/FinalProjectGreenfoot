@@ -15,19 +15,34 @@ public class Anchor extends Actor
     public void act() 
     {      
         moveDown();
-        removeBotAnchor();
+        removeAnchor();
         getImage().scale(100, 100);
     }  
-    
+    /**
+     * moves the anchor down 
+     * 
+     * @parm none
+     * @return none
+     */
     public void moveDown()
     {   
          setLocation( getX(), getY() + 2);
     } 
-
-    public void removeBotAnchor()
+    /**
+     * removes the anchor when it hits the bottom of the screen
+     * 
+     * @parm none
+     * @return none
+     */
+    public void removeAnchor()
     {
         if(getY() >= getWorld().getHeight()-1)
         {
+            getWorld().removeObject(this);
+        }
+        else if(isTouching(Mermaid.class))
+        {
+            Greenfoot.stop();
             getWorld().removeObject(this);
         }
     }

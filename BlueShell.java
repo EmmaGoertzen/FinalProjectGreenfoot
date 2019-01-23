@@ -17,12 +17,24 @@ public class BlueShell extends Actor
         moveDown();
         removeShells();
     }  
-    
+    /**
+     * moves the blue shell down 
+     * 
+     * @parm none
+     * @return none
+     */
     public void moveDown()
     {   
          setLocation( getX(), getY() + 1);
     } 
-
+    
+    /**
+     * removes the shell when it hits the bottom of the screen
+     * also adds points
+     * 
+     * @parm none
+     * @return none
+     */
     public void removeShells()
     {
         if(getY() >= getWorld().getHeight()-1)
@@ -33,7 +45,7 @@ public class BlueShell extends Actor
         {
             SeaWorld world = (SeaWorld) getWorld();
             getWorld().removeObject(this);
-            world.addScore(50);
+            world.addScore(5);
         }
     }
 }
