@@ -27,7 +27,7 @@ public class Scoreboard extends Actor
     /**
      * counts the score and adds to it
      * 
-     * @param none
+     * @param pointsAdded adds points
      * @return none
      */
     public void addToScore(int pointsAdded) 

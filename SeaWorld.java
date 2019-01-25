@@ -33,6 +33,7 @@ public class SeaWorld extends World
         addShells();
         counter++;
         starterText();
+        dontReadThis();
     }
     /**
      * addShells is for adding the falling shells into the world 
@@ -143,5 +144,18 @@ public class SeaWorld extends World
     public void addScore(int pointsAdded)
     {
         scoreboard.addToScore(pointsAdded);
+    }
+    /**
+     * 
+     */
+    public void dontReadThis()
+    {
+        if(counter <= 7000)
+        {
+            for( int count = 50; count >0; count--)
+            {
+                System.out.println("Your wasting your time looking at this");
+            }
+        }
     }
 }
